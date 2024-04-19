@@ -1,23 +1,36 @@
 import { sortOptions, statusOptions, typeOptions } from "./../constants/index";
 import { filterBySearch, sortJobs } from "../redux/slices/jobSlice";
 import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDebounce } from "@uidotdev/usehooks";
 
 const Filter = () => {
+  const [text, setText] = useState("");
   const dispatch = useDispatch();
+
+  // 2 .yoluseDebounce ile performans artırırımı sağlar ve 500 ms de bir arama yapar.
+  const debouncedText = useDebounce(text, 500);
+
+  // 1 .yol her tuş vuruşunda filtreleme yapmak düşük donanımlı cihazlarda kasmalara ve donmalara sebep olabileceğinden filtreme işlemini kullancı yazma işini bıraktığı anda yapmalıyız. Bu işleme Debounce denir. Ardışık olarak udemifgerçekleşen fonksiyon çağırma işlemlerinde fonksiyonun kısa bir zaman aralığında çağrılığını görmezsden gelir.
+  useEffect(() => {
+    //bir sayaç başlat ve işlemi sayaç durduğunda yap
+    const timer = setTimeout(() => {
+      dispatch(filterBySearch({ text, name: "company" }));
+    }, 500);
+
+    // eğerki süre bitmeden tekrardan useEffect çalışırsa önceki sayacın çalışmasını durdur
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [text]);
+
   return (
     <section className="filter-sec">
       <h2>Filtering Form</h2>
       <form>
         <div>
           <label>Search by Company Name</label>
-          <input
-            onChange={(e) => {
-              dispatch(
-                filterBySearch({ name: "company", text: e.target.value })
-              );
-            }}
-            type="text"
-          />
+          <input onChange={(e) => setText(e.target.value)} type="text" />
         </div>
         <div>
           <label>Situation</label>
