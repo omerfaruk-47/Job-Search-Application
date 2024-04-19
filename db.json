@@ -7,7 +7,7 @@
       "location": "Redmond",
       "status": "Reddedildi",
       "type": "Yarı Zamanlı",
-      "date": "2/29/2024"
+      "date": "02/29/2024"
     },
     {
       "id": "95cedbd1-2ca5-419e-b7be-35bb35ef9fa2",
@@ -16,70 +16,16 @@
       "location": "Redmond",
       "status": "Reddedildi",
       "type": "Yarı Zamanlı",
-      "date": "9/29/2024"
+      "date": "03/20/2024"
     },
     {
-      "id": "dfa3f1c6-8533-4cac-873c-64479ecec34a",
-      "position": "Product Manager",
-      "company": "Udemig",
-      "location": "Türkiye",
-      "status": "Devam Ediyor",
-      "type": "Tam Zamanlı",
-      "date": "2/29/2022"
-    },
-    {
-      "id": "34234ee1-dcb5-4c4c-a822-1ed07c7642f4",
-      "position": "C##",
-      "company": "BRİTSCH",
-      "location": "ENGLAND",
-      "status": "Devam Ediyor",
-      "type": "Staj",
-      "date": "31.03.2024"
-    },
-    {
-      "id": "b64db286-1f65-4bdf-b176-759feaf88052",
-      "position": "apotheke",
-      "company": "Microsoft",
-      "location": "fransa",
-      "status": "Reddedildi",
-      "type": "Yarı Zamanlı",
-      "date": "31.03.2024"
-    },
-    {
-      "id": "5d76d4a2-1eca-4bb1-9377-fe3b06306fd4",
+      "id": "4bf5ca3d-79ae-422f-9782-e79dc112088f",
       "position": "tyscript",
-      "company": "bmw",
+      "company": "dspace ",
       "location": "BERLİN",
       "status": "Devam Ediyor",
       "type": "Tam Zamanlı",
-      "date": "31.03.2024"
-    },
-    {
-      "id": "e72ebb95-49c6-4a0b-b8d6-707ef7e7f92d",
-      "position": "tyscript",
-      "company": "BRİTSCH",
-      "location": "almanya",
-      "status": "Devam Ediyor",
-      "type": "Yarı Zamanlı",
-      "date": "31.03.2024"
-    },
-    {
-      "id": "6b6030ec-4a42-4b09-b7ce-6203cca7659d",
-      "position": "C##",
-      "company": "CALİFORNİA A.S",
-      "location": "ABD",
-      "status": "Mülakat",
-      "type": "Staj",
-      "date": "31.03.2024"
-    },
-    {
-      "id": "b04934b1-8349-4b8c-a92e-d859cf732444",
-      "position": "backend developer",
-      "company": "Udemig",
-      "location": "sweden",
-      "status": "Devam Ediyor",
-      "type": "Uzaktan",
-      "date": "31.03.2024"
+      "date": "19.04.2024"
     }
   ]
 }
