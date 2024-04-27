@@ -51,6 +51,10 @@ const jobSlice = createSlice({
       );
     },
 
+    clearFilters: (state) => {
+      state.jobs = state.mainJobs;
+    },
+
     sortJobs: (state, action) => {
       switch (action.payload) {
         case "a-z":
@@ -85,6 +89,7 @@ export const {
   createJob,
   filterBySearch,
   sortJobs,
+  clearFilters,
 } = jobSlice.actions;
 
 //reducer export et

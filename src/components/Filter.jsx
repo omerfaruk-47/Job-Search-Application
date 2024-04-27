@@ -3,15 +3,16 @@ import { filterBySearch, sortJobs } from "../redux/slices/jobSlice";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
+import { clearFilters } from "../redux/slices/jobSlice";
 
 const Filter = () => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
 
-  // 2 .yoluseDebounce ile performans artırırımı sağlar ve 500 ms de bir arama yapar.
+  // 1 .yoluseDebounce ile performans artırırımı sağlar ve 500 ms de bir arama yapar.
   const debouncedText = useDebounce(text, 500);
 
-  // 1 .yol her tuş vuruşunda filtreleme yapmak düşük donanımlı cihazlarda kasmalara ve donmalara sebep olabileceğinden filtreme işlemini kullancı yazma işini bıraktığı anda yapmalıyız. Bu işleme Debounce denir. Ardışık olarak udemifgerçekleşen fonksiyon çağırma işlemlerinde fonksiyonun kısa bir zaman aralığında çağrılığını görmezsden gelir.
+  // 2 .yol her tuş vuruşunda filtreleme yapmak düşük donanımlı cihazlarda kasmalara ve donmalara sebep olabileceğinden filtreme işlemini kullancı yazma işini bıraktığı anda yapmalıyız. Bu işleme Debounce denir. Ardışık olarak udemifgerçekleşen fonksiyon çağırma işlemlerinde fonksiyonun kısa bir zaman aralığında çağrılığını görmezsden gelir.
   useEffect(() => {
     //bir sayaç başlat ve işlemi sayaç durduğunda yap
     const timer = setTimeout(() => {
@@ -50,7 +51,7 @@ const Filter = () => {
         <div>
           <label>Type</label>
           <select
-            onClick={(e) =>
+            onChange={(e) =>
               dispatch(filterBySearch({ name: "type", text: e.target.value }))
             }
           >
@@ -75,7 +76,11 @@ const Filter = () => {
         </div>
 
         <div>
-          <button type="reset" id="special-button">
+          <button
+            onClick={() => dispatch(clearFilters())}
+            type="reset"
+            id="special-button"
+          >
             <span className="circle1"></span>
             <span className="circle2"></span>
             <span className="circle3"></span>
